@@ -1,0 +1,13 @@
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\ConsoleApp1\bin\Debug\netcoreapp2.0\ConsoleApp1.deps.json
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\ConsoleApp1\bin\Debug\netcoreapp2.0\ConsoleApp1.runtimeconfig.json
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\ConsoleApp1\bin\Debug\netcoreapp2.0\ConsoleApp1.runtimeconfig.dev.json
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\ConsoleApp1\bin\Debug\netcoreapp2.0\ConsoleApp1.dll
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\ConsoleApp1\bin\Debug\netcoreapp2.0\ConsoleApp1.pdb
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp1.csprojResolveAssemblyReference.cache
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp1.AssemblyInfoInputs.cache
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp1.AssemblyInfo.cs
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp1.dll
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp1.pdb
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\ConsoleApp1\bin\Debug\netcoreapp2.0\CubeSolver.dll
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\ConsoleApp1\bin\Debug\netcoreapp2.0\CubeSolver.pdb

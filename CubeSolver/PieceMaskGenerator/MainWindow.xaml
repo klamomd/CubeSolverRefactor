@@ -1,0 +1,73 @@
+﻿<Window x:Class="PieceMaskGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PieceMaskGenerator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Column="1" Grid.Row="1" BorderThickness="2" BorderBrush="Black">
+                <Grid x:Name="ButtonGrid" Grid.Column="1" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" MinWidth="25"/>
+                        <ColumnDefinition Width="*" MinWidth="25"/>
+                        <ColumnDefinition Width="*" MinWidth="25"/>
+                        <ColumnDefinition Width="*" MinWidth="25"/>
+                        <ColumnDefinition Width="*" MinWidth="25"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" MinHeight="25"/>
+                        <RowDefinition Height="*" MinHeight="25"/>
+                        <RowDefinition Height="*" MinHeight="25"/>
+                        <RowDefinition Height="*" MinHeight="25"/>
+                        <RowDefinition Height="*" MinHeight="25"/>
+                    </Grid.RowDefinitions>
+
+                    <ToggleButton Tag="Peg0" Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1"/>
+                    <ToggleButton Tag="Peg1" Grid.Row="0" Grid.Column="1"/>
+                    <ToggleButton Tag="Peg2" Grid.Row="0" Grid.Column="2"/>
+                    <ToggleButton Tag="Peg3" Grid.Row="0" Grid.Column="3"/>
+
+                    <ToggleButton Tag="Peg4" Grid.Row="0" Grid.Column="4"/>
+                    <ToggleButton Tag="Peg5" Grid.Row="1" Grid.Column="4"/>
+                    <ToggleButton Tag="Peg6" Grid.Row="2" Grid.Column="4"/>
+                    <ToggleButton Tag="Peg7" Grid.Row="3" Grid.Column="4"/>
+
+                    <ToggleButton Tag="Peg8" Grid.Row="4" Grid.Column="4"/>
+                    <ToggleButton Tag="Peg9" Grid.Row="4" Grid.Column="3"/>
+                    <ToggleButton Tag="Peg10" Grid.Row="4" Grid.Column="2"/>
+                    <ToggleButton Tag="Peg11" Grid.Row="4" Grid.Column="1"/>
+
+                    <ToggleButton Tag="Peg12" Grid.Row="4" Grid.Column="0"/>
+                    <ToggleButton Tag="Peg13" Grid.Row="3" Grid.Column="0"/>
+                    <ToggleButton Tag="Peg14" Grid.Row="2" Grid.Column="0"/>
+                    <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0"/>
+                </Grid>
+            </Border>
+        </Grid>
+        <DockPanel Grid.Column="1" VerticalAlignment="Center" Margin="5">
+            <Label DockPanel.Dock="Left">Piece Mask:</Label>
+            <TextBox BorderBrush="Black" BorderThickness="1" IsReadOnly="True"/>
+        </DockPanel>
+    </Grid>
+</Window>

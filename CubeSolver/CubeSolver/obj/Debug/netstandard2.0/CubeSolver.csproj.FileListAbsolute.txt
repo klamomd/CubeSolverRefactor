@@ -1,0 +1,9 @@
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\CubeSolver\bin\Debug\netstandard2.0\CubeSolver.deps.json
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\CubeSolver\bin\Debug\netstandard2.0\CubeSolver.dll
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\CubeSolver\bin\Debug\netstandard2.0\CubeSolver.pdb
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.csprojResolveAssemblyReference.cache
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.csproj.CoreCompileInputs.cache
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.AssemblyInfoInputs.cache
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.AssemblyInfo.cs
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.dll
+M:\MY PROJECTS\Code\VS Projects\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.pdb
