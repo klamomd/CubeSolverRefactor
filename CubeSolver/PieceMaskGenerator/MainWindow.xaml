@@ -5,7 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PieceMaskGenerator"
         mc:Ignorable="d"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <local:PegToggleButtonConverter x:Key="toggleConverter"/>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -42,32 +49,39 @@
                         <RowDefinition Height="*" MinHeight="25"/>
                         <RowDefinition Height="*" MinHeight="25"/>
                     </Grid.RowDefinitions>
+                    <Grid.Resources>
+                        <Style TargetType="ToggleButton">
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="Command" Value="{Binding Path=TogglePegExistsCommand}"/>
+                        </Style>
+                    </Grid.Resources>
 
-                    <ToggleButton Tag="Peg0" Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1"/>
-                    <ToggleButton Tag="Peg1" Grid.Row="0" Grid.Column="1"/>
-                    <ToggleButton Tag="Peg2" Grid.Row="0" Grid.Column="2"/>
-                    <ToggleButton Tag="Peg3" Grid.Row="0" Grid.Column="3"/>
+                    <ToggleButton Tag="Peg0" Grid.Row="0" Grid.Column="0" CommandParameter="0"/>
+                    <ToggleButton Tag="Peg1" Grid.Row="0" Grid.Column="1" CommandParameter="1"/>
+                    <ToggleButton Tag="Peg2" Grid.Row="0" Grid.Column="2" CommandParameter="2"/>
+                    <ToggleButton Tag="Peg3" Grid.Row="0" Grid.Column="3" CommandParameter="3"/>
 
-                    <ToggleButton Tag="Peg4" Grid.Row="0" Grid.Column="4"/>
-                    <ToggleButton Tag="Peg5" Grid.Row="1" Grid.Column="4"/>
-                    <ToggleButton Tag="Peg6" Grid.Row="2" Grid.Column="4"/>
-                    <ToggleButton Tag="Peg7" Grid.Row="3" Grid.Column="4"/>
+                    <ToggleButton Tag="Peg4" Grid.Row="0" Grid.Column="4" CommandParameter="4"/>
+                    <ToggleButton Tag="Peg5" Grid.Row="1" Grid.Column="4" CommandParameter="5"/>
+                    <ToggleButton Tag="Peg6" Grid.Row="2" Grid.Column="4" CommandParameter="6"/>
+                    <ToggleButton Tag="Peg7" Grid.Row="3" Grid.Column="4" CommandParameter="7"/>
 
-                    <ToggleButton Tag="Peg8" Grid.Row="4" Grid.Column="4"/>
-                    <ToggleButton Tag="Peg9" Grid.Row="4" Grid.Column="3"/>
-                    <ToggleButton Tag="Peg10" Grid.Row="4" Grid.Column="2"/>
-                    <ToggleButton Tag="Peg11" Grid.Row="4" Grid.Column="1"/>
+                    <ToggleButton Tag="Peg8" Grid.Row="4" Grid.Column="4" CommandParameter="8"/>
+                    <ToggleButton Tag="Peg9" Grid.Row="4" Grid.Column="3" CommandParameter="9"/>
+                    <ToggleButton Tag="Peg10" Grid.Row="4" Grid.Column="2" CommandParameter="10"/>
+                    <ToggleButton Tag="Peg11" Grid.Row="4" Grid.Column="1" CommandParameter="11"/>
 
-                    <ToggleButton Tag="Peg12" Grid.Row="4" Grid.Column="0"/>
-                    <ToggleButton Tag="Peg13" Grid.Row="3" Grid.Column="0"/>
-                    <ToggleButton Tag="Peg14" Grid.Row="2" Grid.Column="0"/>
-                    <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0"/>
+                    <ToggleButton Tag="Peg12" Grid.Row="4" Grid.Column="0" CommandParameter="12"/>
+                    <ToggleButton Tag="Peg13" Grid.Row="3" Grid.Column="0" CommandParameter="13"/>
+                    <ToggleButton Tag="Peg14" Grid.Row="2" Grid.Column="0" CommandParameter="14"/>
+                    <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0" CommandParameter="15"/>
                 </Grid>
             </Border>
         </Grid>
         <DockPanel Grid.Column="1" VerticalAlignment="Center" Margin="5">
             <Label DockPanel.Dock="Left">Piece Mask:</Label>
-            <TextBox BorderBrush="Black" BorderThickness="1" IsReadOnly="True"/>
+            <TextBox BorderBrush="Black" BorderThickness="1" Padding="5" IsReadOnly="True" Text="{Binding PieceMaskString}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </DockPanel>
     </Grid>
 </Window>

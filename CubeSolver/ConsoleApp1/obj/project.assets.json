@@ -685,15 +685,12 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mike\\Desktop\\WorkingCubeSolver\\WorkingCubeSolver\\CubeSolver\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Users\\Mike\\Desktop\\WorkingCubeSolver\\CubeSolverRefactor\\CubeSolver\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "C:\\Users\\Mike\\Desktop\\WorkingCubeSolver\\WorkingCubeSolver\\CubeSolver\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectPath": "C:\\Users\\Mike\\Desktop\\WorkingCubeSolver\\CubeSolverRefactor\\CubeSolver\\ConsoleApp1\\ConsoleApp1.csproj",
       "packagesPath": "C:\\Users\\Mike\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mike\\Desktop\\WorkingCubeSolver\\WorkingCubeSolver\\CubeSolver\\ConsoleApp1\\obj\\",
+      "outputPath": "C:\\Users\\Mike\\Desktop\\WorkingCubeSolver\\CubeSolverRefactor\\CubeSolver\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -712,8 +709,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\Mike\\Desktop\\WorkingCubeSolver\\WorkingCubeSolver\\CubeSolver\\CubeSolver\\CubeSolver.csproj": {
-              "projectPath": "C:\\Users\\Mike\\Desktop\\WorkingCubeSolver\\WorkingCubeSolver\\CubeSolver\\CubeSolver\\CubeSolver.csproj"
+            "C:\\Users\\Mike\\Desktop\\WorkingCubeSolver\\CubeSolverRefactor\\CubeSolver\\CubeSolver\\CubeSolver.csproj": {
+              "projectPath": "C:\\Users\\Mike\\Desktop\\WorkingCubeSolver\\CubeSolverRefactor\\CubeSolver\\CubeSolver\\CubeSolver.csproj"
             }
           }
         }

@@ -18,10 +18,13 @@ namespace PieceMaskGenerator
         public MainViewModel()
         {
             _pieceMaskString = "0000000000000000";
+            _togglePegExistsCommand = new DelegateCommand<string>(TogglePegExists);
         }
+
 
         // VARIABLES
         private string _pieceMaskString;
+        private DelegateCommand<string> _togglePegExistsCommand;
 
 
         // PROPERTIES
@@ -38,25 +41,22 @@ namespace PieceMaskGenerator
             }
         }
 
-
-        // * TODO: MASK STRING BINDING
-        // * TODO: TOGGLE BUTTON BINDING + CONVERTER
-
-            /* ---- LEFTOFF HERE ----
-             * : Implemented function below.
-             * : Need to bind textbox to mask string property.
-             * : Need to bind peg buttons with converter that uses function below or similar.
-             * 
-             * 
-             * 
-             */ 
-
+        public DelegateCommand<string> TogglePegExistsCommand
+        {
+            get { return _togglePegExistsCommand; }
+        }
 
 
         // FUNCTIONS
-        public void TogglePegExists(int pegIndex)
+        // Takes in a string pegIndexString which should represent a peg index from 0-15, then toggles the peg at that index in PieceMaskString.
+        public void TogglePegExists(string pegIndexString)
         {
-            if (pegIndex < 0 || pegIndex > 15) throw new ArgumentOutOfRangeException();
+            int pegIndex;
+
+            // Do nothing if pegIndexString is null, not an int, or out of range.
+            if (pegIndexString == null) return;
+            if (!int.TryParse(pegIndexString, out pegIndex)) return;
+            if (pegIndex < 0 || pegIndex > 15) return;
 
             // Flip the index's value.
             string newMask = "";
@@ -77,13 +77,5 @@ namespace PieceMaskGenerator
             // Assign the new piece mask string.
             PieceMaskString = newMask;
         }
-
-
-
-        ////private void MyClickFunction(object sender, RoutedEventArgs e)
-        ////{
-        ////    var tag = ((Button)sender).Tag;
-        ////    MessageBox.Show(tag.ToString());
-        ////}
     }
 }
