@@ -19,14 +19,18 @@ namespace PieceMaskGenerator
         {
             _pieceMaskString = _emptyPieceMask;
             TogglePegExistsCommand = new DelegateCommand<string>(TogglePegExists);
+            AddPieceCommand = new DelegateCommand(AddPiece, CanAddPiece);
+            DeleteSelectedPieceCommand = new DelegateCommand(DeleteSelectedPiece, CanDeleteSelectedPiece);
+            ClearPieceListCommand = new DelegateCommand(ClearPieceList, CanClearPieceList);
+            SolvePuzzleCommand = new DelegateCommand(SolvePuzzle, CanSolvePuzzle);
         }
 
 
         // VARIABLES
         private const string _emptyPieceMask = "0000000000000000";
-        private string _pieceMaskString,
-                       _selectedPieceMask;
-        private List<string> _pieceMasks;
+        private string _pieceMaskString;
+        private int _selectedPieceMaskIndex = -1;
+        private List<string> _pieceMasks = new List<string>();
 
 
         // PROPERTIES
@@ -52,19 +56,23 @@ namespace PieceMaskGenerator
                 {
                     _pieceMasks = value;
                     RaisePropertyChanged("PieceMasks");
+                    AddPieceCommand.RaiseCanExecuteChanged();
+                    ClearPieceListCommand.RaiseCanExecuteChanged();
+                    SolvePuzzleCommand.RaiseCanExecuteChanged();
                 }
             }
         }
 
-        public string SelectedPieceMask
+        public int SelectedPieceMaskIndex
         {
-            get { return _selectedPieceMask; }
+            get { return _selectedPieceMaskIndex; }
             set
             {
-                if (value != _selectedPieceMask)
+                if (value != _selectedPieceMaskIndex)
                 {
-                    _selectedPieceMask = value;
+                    _selectedPieceMaskIndex = value;
                     RaisePropertyChanged("SelectedPieceMask");
+                    DeleteSelectedPieceCommand.RaiseCanExecuteChanged();
                 }
             }
         }
@@ -132,20 +140,59 @@ namespace PieceMaskGenerator
             PieceMaskString = newMask;
         }
 
-        public void AddPieceMask()
+        // Add the piece to the piece masks list and reset the piece mask string.
+        public void AddPiece()
         {
-            List<string> newMasksList = PieceMasks;
+            List<string> newMasksList = new List<string>(PieceMasks);
             newMasksList.Add(PieceMaskString);
             PieceMasks = newMasksList;
             PieceMaskString = _emptyPieceMask;
 
             // TODO: How to reset togglebuttons without cluttering up code with a million bools?
+        }
+
+        // Can only add more pieces when we have less than 6.
+        public bool CanAddPiece()
+        {
+            return PieceMasks.Count < 6;
+        }
+
+        // Remove the piece at the selected index.
+        public void DeleteSelectedPiece()
+        {
+            List<string> newMasksList = new List<string>(PieceMasks);
+            newMasksList.RemoveAt(SelectedPieceMaskIndex);
+            PieceMasks = newMasksList;
+        }
+
+        // Can only delete a piece when one is selected.
+        public bool CanDeleteSelectedPiece()
+        {
+            return SelectedPieceMaskIndex > -1;
+        }
+
+        // Reset the list of pieces.
+        public void ClearPieceList()
+        {
+            PieceMasks = new List<string>();
+        }
+
+        // Can only reset the list of pieces when we have 1 or more pieces.
+        public bool CanClearPieceList()
+        {
+            return PieceMasks.Count > 0;
+        }
+
+        // TODO: Implement this so that it passes the piece masks to the CubeSolver and returns/displays the first solution (or all solutions).
+        public void SolvePuzzle()
+        {
             throw new NotImplementedException();
         }
 
-        public void CanAddPieceMask()
+        // Can only solve the puzzle if we have all 6 pieces.
+        public bool CanSolvePuzzle()
         {
-            throw new NotImplementedException();
+            return PieceMasks.Count == 6;
         }
     }
 }

@@ -83,7 +83,7 @@
             <DockPanel Grid.Column="0" Grid.Row="2"  Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5">
                 <Label DockPanel.Dock="Left">Piece Mask:</Label>
                 <TextBox BorderBrush="Black" BorderThickness="1" Padding="5" IsReadOnly="True" Text="{Binding PieceMaskString}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-                <Button Padding="5">Add</Button>
+                <Button Padding="5" Command="{Binding AddPieceCommand}">Add</Button>
             </DockPanel>
         </Grid>
         <StackPanel Grid.Column="1" Orientation="Horizontal">
@@ -101,10 +101,10 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="15"/>
             </Grid.RowDefinitions>
-            <ListView Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="15" ItemsSource="{Binding Path=PieceMasks}" SelectedItem="{Binding Path=SelectedPieceMask, Mode=TwoWay}"/>
+            <ListView Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="15" ItemsSource="{Binding Path=PieceMasks}" SelectedIndex="{Binding SelectedPieceMaskIndex}"/>
             <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Padding="5" Margin="5">Delete Selected</Button>
-                <Button Padding="5" Margin="5">Clear List</Button>
+                <Button Padding="5" Margin="5" Command="{Binding DeleteSelectedPieceCommand}">Delete Selected</Button>
+                <Button Padding="5" Margin="5" Command="{Binding ClearPieceListCommand}">Clear List</Button>
                 <Button Padding="5" Margin="5">Solve</Button>
             </StackPanel>
         </Grid>
