@@ -17,14 +17,16 @@ namespace PieceMaskGenerator
         // CONSTRUCTOR
         public MainViewModel()
         {
-            _pieceMaskString = "0000000000000000";
-            _togglePegExistsCommand = new DelegateCommand<string>(TogglePegExists);
+            _pieceMaskString = _emptyPieceMask;
+            TogglePegExistsCommand = new DelegateCommand<string>(TogglePegExists);
         }
 
 
         // VARIABLES
-        private string _pieceMaskString;
-        private DelegateCommand<string> _togglePegExistsCommand;
+        private const string _emptyPieceMask = "0000000000000000";
+        private string _pieceMaskString,
+                       _selectedPieceMask;
+        private List<string> _pieceMasks;
 
 
         // PROPERTIES
@@ -41,10 +43,62 @@ namespace PieceMaskGenerator
             }
         }
 
-        public DelegateCommand<string> TogglePegExistsCommand
+        public List<string> PieceMasks
         {
-            get { return _togglePegExistsCommand; }
+            get { return _pieceMasks; }
+            set
+            {
+                if (value != _pieceMasks)
+                {
+                    _pieceMasks = value;
+                    RaisePropertyChanged("PieceMasks");
+                }
+            }
         }
+
+        public string SelectedPieceMask
+        {
+            get { return _selectedPieceMask; }
+            set
+            {
+                if (value != _selectedPieceMask)
+                {
+                    _selectedPieceMask = value;
+                    RaisePropertyChanged("SelectedPieceMask");
+                }
+            }
+        }
+
+        public DelegateCommand<string> TogglePegExistsCommand { get; }
+        public DelegateCommand AddPieceCommand { get; }
+        public DelegateCommand DeleteSelectedPieceCommand { get; }
+        public DelegateCommand ClearPieceListCommand { get; }
+        public DelegateCommand SolvePuzzleCommand { get; }
+
+
+        // LEFTOFF/TODO:
+        /* -ADD BUTTON:
+         *      = AddPiece function
+         *      = CanAddPiece function
+         *      = AddPieceCommand
+         * -DELETE SELECTED BUTTON:
+         *      = DeleteSelected function
+         *      = CanDeleteSelected function
+         *      = DeleteSelectedCommand
+         * -CLEAR LIST BUTTON:
+         *      = ClearList function
+         *      = CanClearList function
+         *      = ClearListCommand
+         * -SOLVE BUTTON:
+         *      = Solve function
+         *      = CanSolve function
+         *      = SolveCommand
+         * -LISTVIEW:
+         *      = List of piecemasks
+         *      = Selected piece mask
+         * -NEED TO DETERMINE HOW TO CLEANLY RESET ALL TOGGLEBUTTONS
+         */
+
 
 
         // FUNCTIONS
@@ -76,6 +130,22 @@ namespace PieceMaskGenerator
 
             // Assign the new piece mask string.
             PieceMaskString = newMask;
+        }
+
+        public void AddPieceMask()
+        {
+            List<string> newMasksList = PieceMasks;
+            newMasksList.Add(PieceMaskString);
+            PieceMasks = newMasksList;
+            PieceMaskString = _emptyPieceMask;
+
+            // TODO: How to reset togglebuttons without cluttering up code with a million bools?
+            throw new NotImplementedException();
+        }
+
+        public void CanAddPieceMask()
+        {
+            throw new NotImplementedException();
         }
     }
 }

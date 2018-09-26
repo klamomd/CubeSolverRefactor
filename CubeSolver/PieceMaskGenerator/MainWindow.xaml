@@ -16,6 +16,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -30,6 +31,7 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
@@ -78,10 +80,35 @@
                     <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0" CommandParameter="15"/>
                 </Grid>
             </Border>
+            <DockPanel Grid.Column="0" Grid.Row="2"  Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5">
+                <Label DockPanel.Dock="Left">Piece Mask:</Label>
+                <TextBox BorderBrush="Black" BorderThickness="1" Padding="5" IsReadOnly="True" Text="{Binding PieceMaskString}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Button Padding="5">Add</Button>
+            </DockPanel>
         </Grid>
-        <DockPanel Grid.Column="1" VerticalAlignment="Center" Margin="5">
-            <Label DockPanel.Dock="Left">Piece Mask:</Label>
-            <TextBox BorderBrush="Black" BorderThickness="1" Padding="5" IsReadOnly="True" Text="{Binding PieceMaskString}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        </DockPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal">
+            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+        </StackPanel>
+        <Grid Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="15"/>
+            </Grid.RowDefinitions>
+            <ListView Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="15" ItemsSource="{Binding Path=PieceMasks}" SelectedItem="{Binding Path=SelectedPieceMask, Mode=TwoWay}"/>
+            <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Padding="5" Margin="5">Delete Selected</Button>
+                <Button Padding="5" Margin="5">Clear List</Button>
+                <Button Padding="5" Margin="5">Solve</Button>
+            </StackPanel>
+        </Grid>
+        
+            
     </Grid>
 </Window>
