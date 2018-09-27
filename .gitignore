@@ -331,3 +331,7 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+CubeSolver/.vs/CubeSolver/v15/.suo
+*.cache
+CubeSolver/ConsoleApp1/obj/Debug/netcoreapp2.0/ConsoleApp1.csprojResolveAssemblyReference.cache
+*.cache
