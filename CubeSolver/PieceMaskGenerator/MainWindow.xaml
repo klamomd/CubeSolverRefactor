@@ -13,7 +13,7 @@
     <Window.Resources>
         <local:PegToggleButtonConverter x:Key="toggleConverter"/>
     </Window.Resources>
-    <Grid>
+    <Grid x:Name="WindowLayoutGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
@@ -23,7 +23,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Column="0">
+        <Grid Grid.Column="0" x:Name="LeftPanelGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
@@ -55,6 +55,25 @@
                         <Style TargetType="ToggleButton">
                             <Setter Property="BorderBrush" Value="Black"/>
                             <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ToggleButton">
+                                        <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                Background="{TemplateBinding Background}" BorderThickness="1">
+                                            <ContentPresenter HorizontalAlignment="Center"                  
+                                              VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked" Value="False">
+                                    <Setter Property="Background" Value="DarkGray" />
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Background" Value="DodgerBlue" />
+                                </Trigger>
+                            </Style.Triggers>
                         </Style>
                     </Grid.Resources>
 
@@ -77,18 +96,21 @@
                     <ToggleButton Tag="Peg13" Grid.Row="3" Grid.Column="0" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=13}"/>
                     <ToggleButton Tag="Peg14" Grid.Row="2" Grid.Column="0" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=14}"/>
                     <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=15}"/>
+
+                    <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Background="DodgerBlue" BorderBrush="Black" BorderThickness="1"/>
                 </Grid>
             </Border>
             <DockPanel Grid.Column="0" Grid.Row="2"  Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5">
-                <Label DockPanel.Dock="Left">Piece Mask:</Label>
+                <!--<Label DockPanel.Dock="Left">Piece Mask:</Label>-->
                 <TextBox BorderBrush="Black" BorderThickness="1" Padding="5" IsReadOnly="True" Text="{Binding PieceMaskString}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                 <Button Padding="5" Command="{Binding AddPieceCommand}">Add</Button>
+                <Button Padding="5" Command="{Binding ResetPieceCommand}">Reset</Button>
             </DockPanel>
         </Grid>
         <StackPanel Grid.Column="1" Orientation="Horizontal">
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
         </StackPanel>
-        <Grid Grid.Column="2">
+        <Grid Grid.Column="2" x:Name="RightPanelGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="15"/>
                 <ColumnDefinition Width="*"/>
@@ -107,7 +129,5 @@
                 <Button Padding="5" Margin="5" Command="{Binding SolvePuzzleCommand}">Solve</Button>
             </StackPanel>
         </Grid>
-        
-            
     </Grid>
 </Window>

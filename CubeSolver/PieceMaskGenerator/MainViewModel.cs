@@ -21,6 +21,7 @@ namespace PieceMaskGenerator
         {
             _pieceMaskString = _emptyPieceMask;
             AddPieceCommand = new DelegateCommand(AddPiece, CanAddPiece);
+            ResetPieceCommand = new DelegateCommand(ResetPiece);
             DeleteSelectedPieceCommand = new DelegateCommand(DeleteSelectedPiece, CanDeleteSelectedPiece);
             ClearPieceListCommand = new DelegateCommand(ClearPieceList, CanClearPieceList);
             SolvePuzzleCommand = new DelegateCommand(SolvePuzzle, CanSolvePuzzle);
@@ -79,6 +80,7 @@ namespace PieceMaskGenerator
         }
 
         public DelegateCommand AddPieceCommand { get; }
+        public DelegateCommand ResetPieceCommand { get; }
         public DelegateCommand DeleteSelectedPieceCommand { get; }
         public DelegateCommand ClearPieceListCommand { get; }
         public DelegateCommand SolvePuzzleCommand { get; }
@@ -123,6 +125,12 @@ namespace PieceMaskGenerator
         public bool CanClearPieceList()
         {
             return PieceMasks.Count > 0;
+        }
+
+        // Reset the piece mask back to all 0s.
+        public void ResetPiece()
+        {
+            PieceMaskString = _emptyPieceMask;
         }
 
         // TODO: Implement this so that it passes the piece masks to the CubeSolver and returns/displays the first solution (or all solutions).
