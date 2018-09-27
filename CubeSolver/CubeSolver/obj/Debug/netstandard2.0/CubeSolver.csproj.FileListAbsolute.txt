@@ -7,3 +7,12 @@ M:\MY PROJECTS\Code\VS Projects\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\C
 M:\MY PROJECTS\Code\VS Projects\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.AssemblyInfo.cs
 M:\MY PROJECTS\Code\VS Projects\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.dll
 M:\MY PROJECTS\Code\VS Projects\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.pdb
+C:\Users\Mike\Desktop\WorkingCubeSolver\CubeSolverRefactor\CubeSolver\CubeSolver\bin\Debug\netstandard2.0\CubeSolver.deps.json
+C:\Users\Mike\Desktop\WorkingCubeSolver\CubeSolverRefactor\CubeSolver\CubeSolver\bin\Debug\netstandard2.0\CubeSolver.dll
+C:\Users\Mike\Desktop\WorkingCubeSolver\CubeSolverRefactor\CubeSolver\CubeSolver\bin\Debug\netstandard2.0\CubeSolver.pdb
+C:\Users\Mike\Desktop\WorkingCubeSolver\CubeSolverRefactor\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.csprojResolveAssemblyReference.cache
+C:\Users\Mike\Desktop\WorkingCubeSolver\CubeSolverRefactor\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.csproj.CoreCompileInputs.cache
+C:\Users\Mike\Desktop\WorkingCubeSolver\CubeSolverRefactor\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.AssemblyInfoInputs.cache
+C:\Users\Mike\Desktop\WorkingCubeSolver\CubeSolverRefactor\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.AssemblyInfo.cs
+C:\Users\Mike\Desktop\WorkingCubeSolver\CubeSolverRefactor\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.dll
+C:\Users\Mike\Desktop\WorkingCubeSolver\CubeSolverRefactor\CubeSolver\CubeSolver\obj\Debug\netstandard2.0\CubeSolver.pdb

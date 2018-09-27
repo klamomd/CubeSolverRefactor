@@ -133,5 +133,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CubeSolver\CubeSolver.csproj">
+      <Project>{6CF08893-3055-44A8-B42C-C2ADA7AADB67}</Project>
+      <Name>CubeSolver</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

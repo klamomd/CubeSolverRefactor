@@ -9,6 +9,8 @@ using System.Windows.Input;
 using Prism;
 using Prism.Commands;
 using Prism.Mvvm;
+using CubeSolver;
+using System.Windows;
 
 namespace PieceMaskGenerator
 {
@@ -126,13 +128,52 @@ namespace PieceMaskGenerator
         // TODO: Implement this so that it passes the piece masks to the CubeSolver and returns/displays the first solution (or all solutions).
         public void SolvePuzzle()
         {
-            throw new NotImplementedException();
+            List<Piece> unsolvedPieces = GeneratePiecesFromMasks(PieceMasks);
+            List<Piece> solvedPiecesList = new List<Piece>();
+
+            bool solutionExists = Calculator.FindSolution(unsolvedPieces, solvedPiecesList, out solvedPiecesList);
+
+            if (!solutionExists) MessageBox.Show("No solution found :(");
+            else
+            {
+                StringBuilder messageBoxContents = new StringBuilder("Solution found:\n");
+                for (int p = 0; p < solvedPiecesList.Count; p++)
+                {
+                    var piece = solvedPiecesList[p];
+
+                    string transformationString = "";
+                    if (piece.IsFlipped) transformationString = string.Format("Flipped, then rotated {0} times.", piece.Rotations);
+                    else transformationString = string.Format("Rotated {0} times.", piece.Rotations);
+
+                    string pieceString = string.Format("ORDERED PIECE #{0}:\t{1} - {2}", p, piece.PieceID, transformationString);
+                    //string pieceString = string.Format("ORDERED PIECE #{0}: {1} - {2} rotation(s). {3}.", p, piece.PieceID, piece.Rotations, piece.IsFlipped ? "Flipped" : "Not Flipped");
+                    messageBoxContents.AppendLine(pieceString);
+                }
+
+                MessageBox.Show(messageBoxContents.ToString());
+            }
         }
 
         // Can only solve the puzzle if we have all 6 pieces.
         public bool CanSolvePuzzle()
         {
             return PieceMasks.Count == 6;
+        }
+
+        // Given a list of piece masks, returns a list of Pieces.
+        public List<Piece> GeneratePiecesFromMasks(List<string> pieceMasks)
+        {
+            if (pieceMasks == null || pieceMasks.Count != 6) throw new ArgumentException("Not enough pieceMasks!");
+
+
+            List<Piece> pieceList = new List<Piece>();
+            int i = 0;
+            foreach (var mask in pieceMasks)
+            {
+                pieceList.Add(new Piece(mask, 0, false, i++));
+            }
+
+            return pieceList;
         }
     }
 }
