@@ -55,29 +55,28 @@
                         <Style TargetType="ToggleButton">
                             <Setter Property="BorderBrush" Value="Black"/>
                             <Setter Property="BorderThickness" Value="1"/>
-                            <Setter Property="Command" Value="{Binding Path=TogglePegExistsCommand}"/>
                         </Style>
                     </Grid.Resources>
 
-                    <ToggleButton Tag="Peg0" Grid.Row="0" Grid.Column="0" CommandParameter="0"/>
-                    <ToggleButton Tag="Peg1" Grid.Row="0" Grid.Column="1" CommandParameter="1"/>
-                    <ToggleButton Tag="Peg2" Grid.Row="0" Grid.Column="2" CommandParameter="2"/>
-                    <ToggleButton Tag="Peg3" Grid.Row="0" Grid.Column="3" CommandParameter="3"/>
+                    <ToggleButton Tag="Peg0" Grid.Row="0" Grid.Column="0" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=0}"/>
+                    <ToggleButton Tag="Peg1" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=1}"/>
+                    <ToggleButton Tag="Peg2" Grid.Row="0" Grid.Column="2" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=2}"/>
+                    <ToggleButton Tag="Peg3" Grid.Row="0" Grid.Column="3" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=3}"/>
 
-                    <ToggleButton Tag="Peg4" Grid.Row="0" Grid.Column="4" CommandParameter="4"/>
-                    <ToggleButton Tag="Peg5" Grid.Row="1" Grid.Column="4" CommandParameter="5"/>
-                    <ToggleButton Tag="Peg6" Grid.Row="2" Grid.Column="4" CommandParameter="6"/>
-                    <ToggleButton Tag="Peg7" Grid.Row="3" Grid.Column="4" CommandParameter="7"/>
+                    <ToggleButton Tag="Peg4" Grid.Row="0" Grid.Column="4" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=4}"/>
+                    <ToggleButton Tag="Peg5" Grid.Row="1" Grid.Column="4" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=5}"/>
+                    <ToggleButton Tag="Peg6" Grid.Row="2" Grid.Column="4" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=6}"/>
+                    <ToggleButton Tag="Peg7" Grid.Row="3" Grid.Column="4" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=7}"/>
 
-                    <ToggleButton Tag="Peg8" Grid.Row="4" Grid.Column="4" CommandParameter="8"/>
-                    <ToggleButton Tag="Peg9" Grid.Row="4" Grid.Column="3" CommandParameter="9"/>
-                    <ToggleButton Tag="Peg10" Grid.Row="4" Grid.Column="2" CommandParameter="10"/>
-                    <ToggleButton Tag="Peg11" Grid.Row="4" Grid.Column="1" CommandParameter="11"/>
+                    <ToggleButton Tag="Peg8" Grid.Row="4" Grid.Column="4" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=8}"/>
+                    <ToggleButton Tag="Peg9" Grid.Row="4" Grid.Column="3" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=9}"/>
+                    <ToggleButton Tag="Peg10" Grid.Row="4" Grid.Column="2" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=10}"/>
+                    <ToggleButton Tag="Peg11" Grid.Row="4" Grid.Column="1" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=11}"/>
 
-                    <ToggleButton Tag="Peg12" Grid.Row="4" Grid.Column="0" CommandParameter="12"/>
-                    <ToggleButton Tag="Peg13" Grid.Row="3" Grid.Column="0" CommandParameter="13"/>
-                    <ToggleButton Tag="Peg14" Grid.Row="2" Grid.Column="0" CommandParameter="14"/>
-                    <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0" CommandParameter="15"/>
+                    <ToggleButton Tag="Peg12" Grid.Row="4" Grid.Column="0" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=12}"/>
+                    <ToggleButton Tag="Peg13" Grid.Row="3" Grid.Column="0" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=13}"/>
+                    <ToggleButton Tag="Peg14" Grid.Row="2" Grid.Column="0" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=14}"/>
+                    <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=15}"/>
                 </Grid>
             </Border>
             <DockPanel Grid.Column="0" Grid.Row="2"  Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5">
@@ -105,7 +104,7 @@
             <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Padding="5" Margin="5" Command="{Binding DeleteSelectedPieceCommand}">Delete Selected</Button>
                 <Button Padding="5" Margin="5" Command="{Binding ClearPieceListCommand}">Clear List</Button>
-                <Button Padding="5" Margin="5">Solve</Button>
+                <Button Padding="5" Margin="5" Command="{Binding SolvePuzzleCommand}">Solve</Button>
             </StackPanel>
         </Grid>
         

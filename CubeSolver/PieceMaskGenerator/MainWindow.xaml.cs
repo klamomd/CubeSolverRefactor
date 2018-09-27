@@ -26,29 +26,4 @@ namespace PieceMaskGenerator
             InitializeComponent();
         }
     }
-
-    public class PegToggleButtonConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            bool isChecked = (bool)value;
-            int pegIndex = 0;
-
-            // Try to parse the parameter as a string holding an int value representing the peg index. Throw an appropriate exception if we fail.
-            if (!int.TryParse((string)parameter, out pegIndex))
-            {
-                string paramString = (parameter == null) ? "null" : parameter.ToString();
-                throw new Exception("PegToggleButtonConverter failed to parse parameter: " + paramString);
-            }
-
-
-            Console.WriteLine("Stepped into Convert");
-            throw new NotImplementedException();
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
 }
