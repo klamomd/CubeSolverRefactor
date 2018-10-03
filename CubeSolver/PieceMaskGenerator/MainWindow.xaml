@@ -6,17 +6,26 @@
         xmlns:local="clr-namespace:PieceMaskGenerator"
         mc:Ignorable="d"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="750">
     <Window.DataContext>
         <local:MainViewModel/>
     </Window.DataContext>
     <Window.Resources>
-        <local:PegToggleButtonConverter x:Key="toggleConverter"/>
+        <local:PegToggleButtonConverter x:Key="interactivePieceToggleConverter"/>
+        <local:PegToggleButtonConverter x:Key="piece0ToggleConverter"/>
+        <local:PegToggleButtonConverter x:Key="piece1ToggleConverter"/>
+        <local:PegToggleButtonConverter x:Key="piece2ToggleConverter"/>
+        <local:PegToggleButtonConverter x:Key="piece3ToggleConverter"/>
+        <local:PegToggleButtonConverter x:Key="piece4ToggleConverter"/>
+        <local:PegToggleButtonConverter x:Key="piece5ToggleConverter"/>
     </Window.Resources>
     <Grid x:Name="WindowLayoutGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/> <!--Separator-->
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/> 
+            <!--Separator-->
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -77,25 +86,25 @@
                         </Style>
                     </Grid.Resources>
 
-                    <ToggleButton Tag="Peg0" Grid.Row="0" Grid.Column="0" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=0}"/>
-                    <ToggleButton Tag="Peg1" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=1}"/>
-                    <ToggleButton Tag="Peg2" Grid.Row="0" Grid.Column="2" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=2}"/>
-                    <ToggleButton Tag="Peg3" Grid.Row="0" Grid.Column="3" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=3}"/>
+                    <ToggleButton Tag="Peg0" Grid.Row="0" Grid.Column="0" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=0}"/>
+                    <ToggleButton Tag="Peg1" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=1}"/>
+                    <ToggleButton Tag="Peg2" Grid.Row="0" Grid.Column="2" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=2}"/>
+                    <ToggleButton Tag="Peg3" Grid.Row="0" Grid.Column="3" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=3}"/>
 
-                    <ToggleButton Tag="Peg4" Grid.Row="0" Grid.Column="4" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=4}"/>
-                    <ToggleButton Tag="Peg5" Grid.Row="1" Grid.Column="4" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=5}"/>
-                    <ToggleButton Tag="Peg6" Grid.Row="2" Grid.Column="4" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=6}"/>
-                    <ToggleButton Tag="Peg7" Grid.Row="3" Grid.Column="4" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=7}"/>
+                    <ToggleButton Tag="Peg4" Grid.Row="0" Grid.Column="4" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=4}"/>
+                    <ToggleButton Tag="Peg5" Grid.Row="1" Grid.Column="4" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=5}"/>
+                    <ToggleButton Tag="Peg6" Grid.Row="2" Grid.Column="4" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=6}"/>
+                    <ToggleButton Tag="Peg7" Grid.Row="3" Grid.Column="4" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=7}"/>
 
-                    <ToggleButton Tag="Peg8" Grid.Row="4" Grid.Column="4" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=8}"/>
-                    <ToggleButton Tag="Peg9" Grid.Row="4" Grid.Column="3" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=9}"/>
-                    <ToggleButton Tag="Peg10" Grid.Row="4" Grid.Column="2" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=10}"/>
-                    <ToggleButton Tag="Peg11" Grid.Row="4" Grid.Column="1" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=11}"/>
+                    <ToggleButton Tag="Peg8" Grid.Row="4" Grid.Column="4" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=8}"/>
+                    <ToggleButton Tag="Peg9" Grid.Row="4" Grid.Column="3" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=9}"/>
+                    <ToggleButton Tag="Peg10" Grid.Row="4" Grid.Column="2" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=10}"/>
+                    <ToggleButton Tag="Peg11" Grid.Row="4" Grid.Column="1" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=11}"/>
 
-                    <ToggleButton Tag="Peg12" Grid.Row="4" Grid.Column="0" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=12}"/>
-                    <ToggleButton Tag="Peg13" Grid.Row="3" Grid.Column="0" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=13}"/>
-                    <ToggleButton Tag="Peg14" Grid.Row="2" Grid.Column="0" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=14}"/>
-                    <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0" IsChecked="{Binding Converter={StaticResource toggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=15}"/>
+                    <ToggleButton Tag="Peg12" Grid.Row="4" Grid.Column="0" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=12}"/>
+                    <ToggleButton Tag="Peg13" Grid.Row="3" Grid.Column="0" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=13}"/>
+                    <ToggleButton Tag="Peg14" Grid.Row="2" Grid.Column="0" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=14}"/>
+                    <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0" IsChecked="{Binding Converter={StaticResource interactivePieceToggleConverter}, Path=PieceMaskString, Mode=TwoWay,  ConverterParameter=15}"/>
 
                     <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Background="DodgerBlue" BorderBrush="Black" BorderThickness="1"/>
                 </Grid>
@@ -110,7 +119,7 @@
         <StackPanel Grid.Column="1" Orientation="Horizontal">
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
         </StackPanel>
-        <Grid Grid.Column="2" x:Name="RightPanelGrid">
+        <Grid Grid.Column="2" x:Name="CenterPanelGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="15"/>
                 <ColumnDefinition Width="*"/>
@@ -124,10 +133,419 @@
             </Grid.RowDefinitions>
             <ListView Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="15" ItemsSource="{Binding Path=PieceMasks}" SelectedIndex="{Binding SelectedPieceMaskIndex}"/>
             <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Padding="5" Margin="5" Command="{Binding DeleteSelectedPieceCommand}">Delete Selected</Button>
-                <Button Padding="5" Margin="5" Command="{Binding ClearPieceListCommand}">Clear List</Button>
-                <Button Padding="5" Margin="5" Command="{Binding SolvePuzzleCommand}">Solve</Button>
+                <Button Padding="5" Margin="2" Command="{Binding DeleteSelectedPieceCommand}">Delete Selected</Button>
+                <Button Padding="5" Margin="2" Command="{Binding ClearPieceListCommand}">Clear List</Button>
+                <Button Padding="5" Margin="2" Command="{Binding SolvePuzzleCommand}">Solve</Button>
             </StackPanel>
+        </Grid>
+        <StackPanel Grid.Column="3" Orientation="Horizontal">
+            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+        </StackPanel>
+        <Grid Grid.Column="4" x:Name="RightPanelGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="15"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Padding="5" Margin="2" IsEnabled="False">Button Placeholder</Button>
+            </StackPanel>
+
+            <Grid x:Name="Piece0ButtonGrid" Grid.Column="2" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                </Grid.RowDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="ToggleButton">
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="IsEnabled" Value="False"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ToggleButton">
+                                    <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                Background="{TemplateBinding Background}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center"                  
+                                              VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Background" Value="DarkGray" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="OrangeRed" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+
+                <ToggleButton Tag="Peg0" Grid.Row="0" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=0}"/>
+                <ToggleButton Tag="Peg1" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=1}"/>
+                <ToggleButton Tag="Peg2" Grid.Row="0" Grid.Column="2" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=2}"/>
+                <ToggleButton Tag="Peg3" Grid.Row="0" Grid.Column="3" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=3}"/>
+
+                <ToggleButton Tag="Peg4" Grid.Row="0" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=4}"/>
+                <ToggleButton Tag="Peg5" Grid.Row="1" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=5}"/>
+                <ToggleButton Tag="Peg6" Grid.Row="2" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=6}"/>
+                <ToggleButton Tag="Peg7" Grid.Row="3" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=7}"/>
+
+                <ToggleButton Tag="Peg8" Grid.Row="4" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=8}"/>
+                <ToggleButton Tag="Peg9" Grid.Row="4" Grid.Column="3" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=9}"/>
+                <ToggleButton Tag="Peg10" Grid.Row="4" Grid.Column="2" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=10}"/>
+                <ToggleButton Tag="Peg11" Grid.Row="4" Grid.Column="1" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=11}"/>
+
+                <ToggleButton Tag="Peg12" Grid.Row="4" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=12}"/>
+                <ToggleButton Tag="Peg13" Grid.Row="3" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=13}"/>
+                <ToggleButton Tag="Peg14" Grid.Row="2" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=14}"/>
+                <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece0ToggleConverter}, Path=Piece0MaskString, Mode=OneWay,  ConverterParameter=15}"/>
+
+                <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Background="OrangeRed" BorderBrush="Black" BorderThickness="1"/>
+            </Grid>
+            <Grid x:Name="Piece1ButtonGrid" Grid.Column="2" Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                </Grid.RowDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="ToggleButton">
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="IsEnabled" Value="False"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ToggleButton">
+                                    <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                Background="{TemplateBinding Background}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center"                  
+                                              VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Background" Value="DarkGray" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="Orange" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+
+                <ToggleButton Tag="Peg0" Grid.Row="0" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=0}"/>
+                <ToggleButton Tag="Peg1" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=1}"/>
+                <ToggleButton Tag="Peg2" Grid.Row="0" Grid.Column="2" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=2}"/>
+                <ToggleButton Tag="Peg3" Grid.Row="0" Grid.Column="3" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=3}"/>
+
+                <ToggleButton Tag="Peg4" Grid.Row="0" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=4}"/>
+                <ToggleButton Tag="Peg5" Grid.Row="1" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=5}"/>
+                <ToggleButton Tag="Peg6" Grid.Row="2" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=6}"/>
+                <ToggleButton Tag="Peg7" Grid.Row="3" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=7}"/>
+
+                <ToggleButton Tag="Peg8" Grid.Row="4" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=8}"/>
+                <ToggleButton Tag="Peg9" Grid.Row="4" Grid.Column="3" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=9}"/>
+                <ToggleButton Tag="Peg10" Grid.Row="4" Grid.Column="2" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=10}"/>
+                <ToggleButton Tag="Peg11" Grid.Row="4" Grid.Column="1" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=11}"/>
+
+                <ToggleButton Tag="Peg12" Grid.Row="4" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=12}"/>
+                <ToggleButton Tag="Peg13" Grid.Row="3" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=13}"/>
+                <ToggleButton Tag="Peg14" Grid.Row="2" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=14}"/>
+                <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece1ToggleConverter}, Path=Piece1MaskString, Mode=OneWay,  ConverterParameter=15}"/>
+
+                <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Background="Orange" BorderBrush="Black" BorderThickness="1"/>
+            </Grid>
+            <Grid x:Name="Piece2ButtonGrid" Grid.Column="2" Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                </Grid.RowDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="ToggleButton">
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="IsEnabled" Value="False"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ToggleButton">
+                                    <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                Background="{TemplateBinding Background}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center"                  
+                                              VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Background" Value="DarkGray" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="Yellow" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+
+                <ToggleButton Tag="Peg0" Grid.Row="0" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=0}"/>
+                <ToggleButton Tag="Peg1" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=1}"/>
+                <ToggleButton Tag="Peg2" Grid.Row="0" Grid.Column="2" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=2}"/>
+                <ToggleButton Tag="Peg3" Grid.Row="0" Grid.Column="3" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=3}"/>
+
+                <ToggleButton Tag="Peg4" Grid.Row="0" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=4}"/>
+                <ToggleButton Tag="Peg5" Grid.Row="1" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=5}"/>
+                <ToggleButton Tag="Peg6" Grid.Row="2" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=6}"/>
+                <ToggleButton Tag="Peg7" Grid.Row="3" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=7}"/>
+
+                <ToggleButton Tag="Peg8" Grid.Row="4" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=8}"/>
+                <ToggleButton Tag="Peg9" Grid.Row="4" Grid.Column="3" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=9}"/>
+                <ToggleButton Tag="Peg10" Grid.Row="4" Grid.Column="2" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=10}"/>
+                <ToggleButton Tag="Peg11" Grid.Row="4" Grid.Column="1" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=11}"/>
+
+                <ToggleButton Tag="Peg12" Grid.Row="4" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=12}"/>
+                <ToggleButton Tag="Peg13" Grid.Row="3" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=13}"/>
+                <ToggleButton Tag="Peg14" Grid.Row="2" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=14}"/>
+                <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece2ToggleConverter}, Path=Piece2MaskString, Mode=OneWay,  ConverterParameter=15}"/>
+
+                <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Background="Yellow" BorderBrush="Black" BorderThickness="1"/>
+            </Grid>
+            <Grid x:Name="Piece3ButtonGrid" Grid.Column="2" Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                </Grid.RowDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="ToggleButton">
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="IsEnabled" Value="False"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ToggleButton">
+                                    <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                Background="{TemplateBinding Background}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center"                  
+                                              VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Background" Value="DarkGray" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="Lime" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+
+                <ToggleButton Tag="Peg0" Grid.Row="0" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=0}"/>
+                <ToggleButton Tag="Peg1" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=1}"/>
+                <ToggleButton Tag="Peg2" Grid.Row="0" Grid.Column="2" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=2}"/>
+                <ToggleButton Tag="Peg3" Grid.Row="0" Grid.Column="3" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=3}"/>
+
+                <ToggleButton Tag="Peg4" Grid.Row="0" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=4}"/>
+                <ToggleButton Tag="Peg5" Grid.Row="1" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=5}"/>
+                <ToggleButton Tag="Peg6" Grid.Row="2" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=6}"/>
+                <ToggleButton Tag="Peg7" Grid.Row="3" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=7}"/>
+
+                <ToggleButton Tag="Peg8" Grid.Row="4" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=8}"/>
+                <ToggleButton Tag="Peg9" Grid.Row="4" Grid.Column="3" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=9}"/>
+                <ToggleButton Tag="Peg10" Grid.Row="4" Grid.Column="2" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=10}"/>
+                <ToggleButton Tag="Peg11" Grid.Row="4" Grid.Column="1" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=11}"/>
+
+                <ToggleButton Tag="Peg12" Grid.Row="4" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=12}"/>
+                <ToggleButton Tag="Peg13" Grid.Row="3" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=13}"/>
+                <ToggleButton Tag="Peg14" Grid.Row="2" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=14}"/>
+                <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece3ToggleConverter}, Path=Piece3MaskString, Mode=OneWay,  ConverterParameter=15}"/>
+
+                <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Background="Lime" BorderBrush="Black" BorderThickness="1"/>
+            </Grid>
+            <Grid x:Name="Piece4ButtonGrid" Grid.Column="1" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                </Grid.RowDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="ToggleButton">
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="IsEnabled" Value="False"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ToggleButton">
+                                    <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                Background="{TemplateBinding Background}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center"                  
+                                              VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Background" Value="DarkGray" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="Blue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+
+                <ToggleButton Tag="Peg0" Grid.Row="0" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=0}"/>
+                <ToggleButton Tag="Peg1" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=1}"/>
+                <ToggleButton Tag="Peg2" Grid.Row="0" Grid.Column="2" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=2}"/>
+                <ToggleButton Tag="Peg3" Grid.Row="0" Grid.Column="3" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=3}"/>
+
+                <ToggleButton Tag="Peg4" Grid.Row="0" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=4}"/>
+                <ToggleButton Tag="Peg5" Grid.Row="1" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=5}"/>
+                <ToggleButton Tag="Peg6" Grid.Row="2" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=6}"/>
+                <ToggleButton Tag="Peg7" Grid.Row="3" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=7}"/>
+
+                <ToggleButton Tag="Peg8" Grid.Row="4" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=8}"/>
+                <ToggleButton Tag="Peg9" Grid.Row="4" Grid.Column="3" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=9}"/>
+                <ToggleButton Tag="Peg10" Grid.Row="4" Grid.Column="2" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=10}"/>
+                <ToggleButton Tag="Peg11" Grid.Row="4" Grid.Column="1" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=11}"/>
+
+                <ToggleButton Tag="Peg12" Grid.Row="4" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=12}"/>
+                <ToggleButton Tag="Peg13" Grid.Row="3" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=13}"/>
+                <ToggleButton Tag="Peg14" Grid.Row="2" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=14}"/>
+                <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece4ToggleConverter}, Path=Piece4MaskString, Mode=OneWay,  ConverterParameter=15}"/>
+
+                <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Background="Blue" BorderBrush="Black" BorderThickness="1"/>
+            </Grid>
+            <Grid x:Name="Piece5ButtonGrid" Grid.Column="3" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                    <ColumnDefinition Width="*" MinWidth="5"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                    <RowDefinition Height="*" MinHeight="5"/>
+                </Grid.RowDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="ToggleButton">
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="IsEnabled" Value="False"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ToggleButton">
+                                    <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                Background="{TemplateBinding Background}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center"                  
+                                              VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Background" Value="DarkGray" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="Purple" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+
+                <ToggleButton Tag="Peg0" Grid.Row="0" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=0}"/>
+                <ToggleButton Tag="Peg1" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=1}"/>
+                <ToggleButton Tag="Peg2" Grid.Row="0" Grid.Column="2" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=2}"/>
+                <ToggleButton Tag="Peg3" Grid.Row="0" Grid.Column="3" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=3}"/>
+
+                <ToggleButton Tag="Peg4" Grid.Row="0" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=4}"/>
+                <ToggleButton Tag="Peg5" Grid.Row="1" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=5}"/>
+                <ToggleButton Tag="Peg6" Grid.Row="2" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=6}"/>
+                <ToggleButton Tag="Peg7" Grid.Row="3" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=7}"/>
+
+                <ToggleButton Tag="Peg8" Grid.Row="4" Grid.Column="4" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=8}"/>
+                <ToggleButton Tag="Peg9" Grid.Row="4" Grid.Column="3" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=9}"/>
+                <ToggleButton Tag="Peg10" Grid.Row="4" Grid.Column="2" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=10}"/>
+                <ToggleButton Tag="Peg11" Grid.Row="4" Grid.Column="1" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=11}"/>
+
+                <ToggleButton Tag="Peg12" Grid.Row="4" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=12}"/>
+                <ToggleButton Tag="Peg13" Grid.Row="3" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=13}"/>
+                <ToggleButton Tag="Peg14" Grid.Row="2" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=14}"/>
+                <ToggleButton Tag="Peg15" Grid.Row="1" Grid.Column="0" IsChecked="{Binding Converter={StaticResource piece5ToggleConverter}, Path=Piece5MaskString, Mode=OneWay,  ConverterParameter=15}"/>
+
+                <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Background="Purple" BorderBrush="Black" BorderThickness="1"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

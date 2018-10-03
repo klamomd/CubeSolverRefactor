@@ -33,6 +33,7 @@ namespace PieceMaskGenerator
         private string _pieceMaskString;
         private int _selectedPieceMaskIndex = -1;
         private List<string> _pieceMasks = new List<string>();
+        private List<string> _solutionPieceMasks = new List<string>();
 
 
         // PROPERTIES
@@ -79,11 +80,85 @@ namespace PieceMaskGenerator
             }
         }
 
+        public List<string> SolutionPieceMasks
+        {
+            get { return _solutionPieceMasks; }
+            set
+            {
+                if (value != _solutionPieceMasks)
+                {
+                    _solutionPieceMasks = value;
+                    RaisePropertyChanged("SolutionPieceMasks");
+                    RaisePropertyChanged("Piece0MaskString");
+                    RaisePropertyChanged("Piece1MaskString");
+                    RaisePropertyChanged("Piece2MaskString");
+                    RaisePropertyChanged("Piece3MaskString");
+                    RaisePropertyChanged("Piece4MaskString");
+                    RaisePropertyChanged("Piece5MaskString");
+                }
+            }
+        }
+
+        public string Piece0MaskString
+        {
+            get
+            {
+                if (_solutionPieceMasks == null || _solutionPieceMasks.Count != 6) return _emptyPieceMask;
+                else return _solutionPieceMasks[0];
+            }
+        }
+
+        public string Piece1MaskString
+        {
+            get
+            {
+                if (_solutionPieceMasks == null || _solutionPieceMasks.Count != 6) return _emptyPieceMask;
+                else return _solutionPieceMasks[1];
+            }
+        }
+
+        public string Piece2MaskString
+        {
+            get
+            {
+                if (_solutionPieceMasks == null || _solutionPieceMasks.Count != 6) return _emptyPieceMask;
+                else return _solutionPieceMasks[2];
+            }
+        }
+
+        public string Piece3MaskString
+        {
+            get
+            {
+                if (_solutionPieceMasks == null || _solutionPieceMasks.Count != 6) return _emptyPieceMask;
+                else return _solutionPieceMasks[3];
+            }
+        }
+
+        public string Piece4MaskString
+        {
+            get
+            {
+                if (_solutionPieceMasks == null || _solutionPieceMasks.Count != 6) return _emptyPieceMask;
+                else return _solutionPieceMasks[4];
+            }
+        }
+
+        public string Piece5MaskString
+        {
+            get
+            {
+                if (_solutionPieceMasks == null || _solutionPieceMasks.Count != 6) return _emptyPieceMask;
+                else return _solutionPieceMasks[5];
+            }
+        }
+
         public DelegateCommand AddPieceCommand { get; }
         public DelegateCommand ResetPieceCommand { get; }
         public DelegateCommand DeleteSelectedPieceCommand { get; }
         public DelegateCommand ClearPieceListCommand { get; }
         public DelegateCommand SolvePuzzleCommand { get; }
+
 
         // FUNCTIONS
         // Add the piece to the piece masks list and reset the piece mask string.
@@ -157,6 +232,14 @@ namespace PieceMaskGenerator
                     //string pieceString = string.Format("ORDERED PIECE #{0}: {1} - {2} rotation(s). {3}.", p, piece.PieceID, piece.Rotations, piece.IsFlipped ? "Flipped" : "Not Flipped");
                     messageBoxContents.AppendLine(pieceString);
                 }
+
+                // Set the solution piece masks.
+                List<string> solutionPieceMasks = new List<string>();
+                foreach (var piece in solvedPiecesList)
+                {
+                    solutionPieceMasks.Add(piece.PieceMaskString);
+                }
+                SolutionPieceMasks = solutionPieceMasks;
 
                 MessageBox.Show(messageBoxContents.ToString());
             }
