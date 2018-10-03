@@ -195,9 +195,10 @@ namespace CubeSolver
                 if (thisSideMaskString[i] == '1' && otherSideMaskString[i] == '1') return true;
 
                 // Check the center 3 pegs to see if any are empty on both pieces.
-                else if (i >= 1 && i <= 3)
+                if (i >= 1 && i <= 3)
                 {
-                    if (thisSideMaskString[i] == '0' && otherSideMaskString[i] == '0') return true;
+                    if (thisSideMaskString[i] == '0' && otherSideMaskString[i] == '0')
+                        return true;
                 }
             }
 

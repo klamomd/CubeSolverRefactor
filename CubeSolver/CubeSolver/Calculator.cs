@@ -205,16 +205,11 @@ namespace CubeSolver
             string pieceMask = piece.PieceMaskString;
             pieceMask.ThrowIfNullOrBadLength(16);
 
-            // Check for collisions.
+            // Check for collisions or missing pieces.
             for (int i = 0; i < 16; i++)
             {
                 if (pieceMask[i] == '1' && slotMask[i] == '1') return false;
-            }
-
-            // Check that corners exists:
-            for (int i = 0; i < 4; i++)
-            {
-                if (pieceMask[i * 4] != '1' && slotMask[i * 4] != '1') return false;
+                if (pieceMask[i] == '0' && slotMask[i] == '0') return false;
             }
 
             return true;
