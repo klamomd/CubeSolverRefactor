@@ -216,7 +216,13 @@ namespace PieceMaskGenerator
 
             bool solutionExists = Calculator.FindSolution(unsolvedPieces, solvedPiecesList, out solvedPiecesList);
 
-            if (!solutionExists) MessageBox.Show("No solution found :(");
+            if (!solutionExists)
+            {
+                MessageBox.Show("No solution found :(");
+
+                // Reset the solution piece masks to nothing.
+                SolutionPieceMasks = new List<string>();
+            }
             else
             {
                 StringBuilder messageBoxContents = new StringBuilder("Solution found:\n");

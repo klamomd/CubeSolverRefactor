@@ -335,3 +335,10 @@ CubeSolver/.vs/CubeSolver/v15/.suo
 *.cache
 CubeSolver/ConsoleApp1/obj/Debug/netcoreapp2.0/ConsoleApp1.csprojResolveAssemblyReference.cache
 *.cache
+*.exe
+CubeSolver/.vs/CubeSolver/v15/.suo
+CubeSolver/PieceMaskGenerator/obj/Debug/MainWindow.g.i.cs
+CubeSolver/PieceMaskGenerator/obj/Debug/MainWindow.g.cs
+CubeSolver/PieceMaskGenerator/obj/Debug/PieceMaskGenerator.exe
+CubeSolver/PieceMaskGenerator/bin/Debug/PieceMaskGenerator.exe
+CubeSolver/PieceMaskGenerator/obj/Debug/PieceMaskGenerator.g.resources
