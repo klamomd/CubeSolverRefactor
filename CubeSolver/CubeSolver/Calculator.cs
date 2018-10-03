@@ -98,7 +98,6 @@ namespace CubeSolver
             return false;
         }
 
-
         public static bool DoesPieceFit(Piece piece, List<Piece> solvedPieces)
         {
             int slotIndex = solvedPieces.Count;
